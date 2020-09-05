@@ -7,11 +7,10 @@
 
 '''
 
-from django.contrib import admin
-from .models import ExperimentDevelopment,Stream,Branch,JobRole
-# Register your models here.
+from django.urls import path
+from . import views
 
-admin.site.register(ExperimentDevelopment)  
-admin.site.register(Stream)
-admin.site.register(Branch)
-admin.site.register(JobRole)
+urlpatterns =[
+    path('branch', views.branch,name="branch"),
+    path('role_details', views.role_details,name="role_details"),
+]

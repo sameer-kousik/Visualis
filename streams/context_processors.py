@@ -7,11 +7,9 @@
 
 '''
 
-from django.contrib import admin
+from django.shortcuts import render
 from .models import ExperimentDevelopment,Stream,Branch,JobRole
-# Register your models here.
 
-admin.site.register(ExperimentDevelopment)  
-admin.site.register(Stream)
-admin.site.register(Branch)
-admin.site.register(JobRole)
+def branch_processor(request):
+ branches = Branch.objects.all()            
+ return {'branches': branches}
