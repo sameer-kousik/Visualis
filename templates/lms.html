@@ -153,7 +153,7 @@
     <h3 class="title" >{{course.title}}</h3>
     <a href="#" data-url="{{course.pdf.url}}">Course Overview</a>
     {%for week in weeks%}
-      <a href="#" data-url="{{week.pdf.url}}">Week {{week.week_no}}</a>
+      <a href="#" data-url="{{week.link}}">Week {{week.week_no}}</a>
     {%endfor%}
     <hr>
     <hr>
@@ -174,11 +174,11 @@
     </div>
 
   </div>
+
   <div class="content" > 
-    <div  id="material" class="weekly container" style=" float : right; margin-top:80px;">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZFxlw_jm_2Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div  id="material" class="weekly container" style=" float : right; margin-top:200px;">
+          <p id="disp"></p>
     </div>
-    
   </div>
 
 <script>
@@ -211,7 +211,10 @@ for (i = 0; i < dropdown.length; i++) {
       var end = source.indexOf("type");
       var potter = document.getElementsById('dip');
       potter[0].src=source;*/
-      $("#disp").attr('src',source);
+      //$("#disp").replaceWith($(source));
+      $('#disp').empty();
+      $('#disp').append(source);   
+      //$("#disp").attr('src',source);
     });
 
   </script>  

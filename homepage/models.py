@@ -70,7 +70,7 @@ class Weeks(models.Model):
         week_id = models.AutoField(primary_key=True)
         course_id = models.ForeignKey(Courses,on_delete=models.CASCADE)
         week_no = models.IntegerField()
-        link = models.URLField(max_length = 730)
+        link = models.TextField()
         test_available = models.BooleanField(default=False)
         def __str__(self):
                 mentor_name = str(self.course_id.mentor_name)
