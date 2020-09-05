@@ -34,7 +34,7 @@ class Courses(models.Model):
     content_details = models.TextField()
     course_img = models.ImageField(upload_to = 'pics')
     overview = models.CharField(max_length = 50)
-    pdf = models.FileField(upload_to='pdfs')
+    intro = models.URLField(max_length = 730)
     no_of_weeks = models.CharField(max_length = 50)
     course_level = models.CharField(max_length = 50)
     skills = models.TextField()
@@ -70,7 +70,7 @@ class Weeks(models.Model):
         week_id = models.AutoField(primary_key=True)
         course_id = models.ForeignKey(Courses,on_delete=models.CASCADE)
         week_no = models.IntegerField()
-        pdf = models.FileField(upload_to='pdfs')
+        link = models.URLField(max_length = 730)
         test_available = models.BooleanField(default=False)
         def __str__(self):
                 mentor_name = str(self.course_id.mentor_name)
@@ -165,5 +165,5 @@ class Carousel(models.Model):
         carousel_image = models.ImageField(
                 upload_to = 'Carosels'
         )
-        carousel_link = models.URLField(max_length = 200)
+        carousel_link = models.URLField(max_length = 730)
         
