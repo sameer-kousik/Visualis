@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>Error 404 | NOT FOUND</title>
+{% endblock headtitle %}
+
+{% block extracss %}
+<!-- <link href="{% static '/css/style.css' %}" rel="stylesheet"> -->
+{% endblock extracss %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4" style="font-family:'Roboto', sans-serif; text-align: center; color: black;">ERROR 40<span style="color: #FF8C00;">4</span></h1>
+    <h1 style="font-family:'Roboto', sans-serif;font-size: 60px; text-align: center; color: black;">PAGE NOT FOUN<span style="color: #FF8C00;">D</span></h1>
+  <hr class="my-4">
+  <div class="container" style="margin-left:20%;">
+    <p>This page is missing or doesn't exist.</p>
+    <p class="lead" style="align-items: center;">
+      <a class="btn btn-primary btn-warning" href="{%url 'index'%}" role="button">Home</a>
+    </p>
+  </div>
+  </div>
+
+{% endblock content %}
+

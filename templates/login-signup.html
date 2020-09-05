@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headtitle %}
+    <title>Login</title>
+{% endblock headtitle %}
+
+{% block extracss %}
+<link href="{% static '/css/login.css' %}" rel="stylesheet">
+<link href="{% static '/css/style.css' %}" rel="stylesheet">
+{% endblock extracss %}
+
+{% block content %}
+<style>
+	#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+</style>
+
+
+<div style="display: block; margin-top: 100px">
+
+<div class="forms">
+	<ul class="tab-group">
+		<li class="tab active"><a href="#login">Log In</a></li>
+		<li class="tab"><a href="#signup">Sign Up</a></li>
+	</ul>
+	<form action="/login" id="login" method = "POST">
+		{% csrf_token %}
+	      <h1>Login on Spanav</h1>
+	      <div class="input-field">
+	        <label for="username">Username</label>
+	        <input type="text" name="username" required="username" />
+	        <label for="password">Password</label> 
+	        <input type="password" name="password" required/>
+	        <input type="submit" value="Login" class="button"/>
+	        <p class="text-p"> <a href="/reset_password">Forgot password?</a> </p>
+		  </div>
+		  <span style="text-align: center; color: red;">
+			<h3>
+			{% for message in messages %}
+			{{message}}
+			{% endfor %}
+			</h3>
+			</span>
+	  </form>
+	  <form action="/register" id="signup" method="POST">
+		{% csrf_token %}
+	      <h1>Sign Up on Spanav</h1>
+	      <div class="input-field">
+			<label for="first_name">FirstName</label> 
+			<input type="text" name="first_name" required="first_name"/>
+			<label for="last_name">LastName</label> 
+			<input type="text" name="last_name"/>
+			<label for="username">UserName</label> 
+			<input type="text" name="username" required="username"/>
+	        <label for="email">Email</label> 
+	        <input type="email" name="email" required="email"/>
+	        <label for="password">Password</label> 
+	        <input type="password" name="password1" required/>
+	        <label for="password">Confirm Password</label> 
+	        <input type="password" name="password2" required/>
+	        <input type="submit" value="Signup" class="button"/>
+		  </div>
+		  <div>
+			<span style="text-align: center; color: red;">
+			<h5>
+			{% for message in messages %}
+			{{message}}
+			{% endfor %}
+			</h5>
+			</span>
+	</div>
+	  </form>
+    </div>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	  $('.tab a').on('click', function (e) {
+	  e.preventDefault();
+	  
+	  $(this).parent().addClass('active');
+	  $(this).parent().siblings().removeClass('active');
+	  
+	  var href = $(this).attr('href');
+	  $('.forms > form').hide();
+	  $(href).fadeIn(500);
+	});
+});
+function on() {
+	document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+	document.getElementById("overlay").style.display = "none";
+  }
+</script>
+{% endblock content %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>{{branch.name}}</title>
+{% endblock headtitle %}
+
+
+{% block extracss %}
+<link href="{% static '/css/style.css' %}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static '/css/branch.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">   
+
+<link href="{% static '/css/blog.css' %}" rel="stylesheet">
+
+{% endblock extracss %}
+
+
+{% block content %}
+
+{% if development %}
+<div class="container" style="margin : 20px; margin-top : 80px;">
+  <div class="row">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+      <div class="card">
+          <h2>Coming Soon</h2>
+        </div>
+      </div>
+    </div>
+</div>
+{% else %}
+<body>
+  
+<div class="container-fluid top-head">
+
+  <h2 style="font-family: 'Rowdies', cursive;">{{branch.title}}</h2>  
+</div>
+<div class="container mt-5">
+{%for role in roles%}
+<div class="card mt-4">
+  <div class="row"> 
+    <div class="col-md-4 d-flex align-items-stretch">
+      <img src="{{role.image.url}}" alt="Image" class="img-fluid" >
+    </div>
+    <div class="col-md-8">
+       <h2 class="mt-2" style="font-family: 'Playfair Display', serif; font-size: 350%;">{{role.title}}</h2>
+       {% if role.html_enabled %}
+          {% autoescape off %}
+          {{role.description}} 
+          {% endautoescape %}
+        {% else %}
+          <p>{{role.description}}</p>
+        {% endif %}
+        <form action = '/role_details' method = "POST">
+          {% csrf_token %}
+            <input type = "hidden" value = {{role.role_id}} name = "role_id"/>
+            <input type = "submit"  id="purchase" class="btn btn-rounded btn-warning" value = "Read More" />
+        </form>
+    </div>
+  </div>
+</div>
+{%endfor%}
+
+</div>
+
+</body>
+{% endif %}
+{% endblock content %}

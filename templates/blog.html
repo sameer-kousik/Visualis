@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>{{blog.blog_title}}</title>
+{% endblock headtitle %}
+
+
+{% block extracss %}
+<link href="{% static '/css/style.css' %}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static '/css/blog.css' %}" rel="stylesheet">
+{% endblock extracss %}
+
+
+
+{% block content %}
+<body class="border border-warning">
+
+<div class="container">
+    <h2>{{blog.blog_title}}</h2>
+    <h5 style="float: right;font-style: italic;">- {{blog.blog_author}}</h5>
+</div>
+    <div id="img_cont" class="container">
+        <img src="{{blog.blog_img.url}}" alt="Blog Image">
+    </div>
+<div class="container">    
+    <div id="bl_content">
+        {% if blog.html_enabled %}
+          {% autoescape off %}
+          {{blog.blog_content}} 
+          {% endautoescape %}
+          {% else %}
+          <p>{{blog.blog_content}}</p>
+        {% endif %}
+    </div>
+</div>
+
+</div>
+{% endblock content %}
+
+</body>
+
+
+

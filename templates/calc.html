@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>Score</title>
+{% endblock headtitle %}
+
+
+{% block extracss %}
+  <link href="{% static '/css/style.css' %}" rel="stylesheet">
+  <link href="{% static '/css/calc.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+{% endblock extracss %}
+
+
+{% block content %}
+<body>
+    <div id="scorer" class="container">
+        <h1>Your Score: {{coN}}</h1>    
+        {% for question,correct,choice in anslist%}
+        <div class="container-fluid">
+            {%if question.question_image%}
+            <img src="{{question.question_image.url}}">
+            {% endif %} 
+            <h2>Q: {{question.description}}</h2>
+            <h5 style="margin: 30px; font-size: 150%;">Correct Answer:<span style="color: rgb(52, 236, 52);">{{correct}}</span></h4>
+            <h5 style="margin: 30px;  font-size: 150%;">Your Choice : <span style="color: rgb(230, 85, 28);">{{choice}}</span></h4>
+            <hr>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+{% endblock content %}
+</html>

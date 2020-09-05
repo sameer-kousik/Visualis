@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>{{role.title}}</title>
+{% endblock headtitle %}
+
+<head>
+{% block extracss %}
+<link href="{% static '/css/style.css' %}" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static '/css/blog.css' %}" rel="stylesheet">
+{% endblock extracss %}
+</head>
+
+
+{% block content %}
+<body class="border border-warning">
+
+<div class="container bg-co">
+    <h2>{{role.title}}</h2>
+</div>
+    <div id="img_cont" class="container bg-co">
+        <img src="{{role.image.url}}" alt=" Role Image">
+    </div>
+<div class="container">  
+    <h3 class="heado">Description:</h3>  
+    <div class="bl_content">
+        {% if role.html_enabled %}
+          {% autoescape off %}
+          {{role.description}} 
+          {% endautoescape %}
+          {% else %}
+          <p>{{role.description}}</p>
+        {% endif %}
+    </div>
+    <hr>
+    {%if role.responsibilities%}
+    <h3 class="heado">Responsibilities:</h3>
+        <div class="bl_content">
+            {% if role.html_enabled %}
+                {% autoescape off %}
+                {{role.responsibilities}} 
+                {% endautoescape %}
+            {% else %}
+                <p>{{role.responsibilities}}</p>
+            {% endif %}
+        </div>  
+        <hr>
+    {%endif%}
+    {%if role.salary%}
+    <h3 class="heado">Salary:</h3>
+        <div class="bl_content">
+            {% if role.html_enabled %}
+                {% autoescape off %}
+                {{role.salary}} 
+                {% endautoescape %}
+            {% else %}
+                <p>{{role.salary}}</p>
+            {% endif %}
+        </div>
+        <hr>
+    {%endif%}
+    {%if role.working_hrs%}
+    <h3 class="heado">Working Hours:</h3>
+        <div class="bl_content">
+            {% if role.html_enabled %}
+                {% autoescape off %}
+                {{role.working_hrs}} 
+                {% endautoescape %}
+            {% else %}
+                <p>{{role.working_hrs}}</p>
+            {% endif %}
+        </div>
+        <hr>
+    {%endif%}
+    {%if role.qualifications%}
+    <h3 class="heado">Qualifications:</h3>
+        <div class="bl_content">
+            {% if role.html_enabled %}
+                {% autoescape off %}
+                {{role.qualifications}} 
+                {% endautoescape %}
+             {% else %}
+                <p>{{role.qualifications}}</p>
+            {% endif %}
+        </div>
+        <hr>
+    {%endif%}
+    {%if role.skills%}
+    <h3 class="heado">Role Skills:</h3>
+        <div class="bl_content">
+            {% if role.html_enabled %}
+                {% autoescape off %}
+                {{role.skills}} 
+                {% endautoescape %}
+                {% else %}
+                <p>{{role.skills}}</p>
+            {% endif %}
+        </div>
+        <hr>
+    {%endif%}
+    {%if role.experience%}
+    <h3 class="heado">Experience:</h3>
+    <div class="bl_content">
+        {% if role.html_enabled %}
+          {% autoescape off %}
+          {{role.experience}} 
+          {% endautoescape %}
+          {% else %}
+          <p>{{role.experience}}</p>
+        {% endif %}
+    </div>
+    <hr>
+    {%endif%}
+    {%if role.employer%}
+    <h3 class="heado">Employers:</h3>
+    <div class="bl_content">
+        {% if role.html_enabled %}
+          {% autoescape off %}
+          {{role.employer}} 
+          {% endautoescape %}
+          {% else %}
+          <p>{{role.employer}}</p>
+        {% endif %}
+    </div>
+    <hr>
+    {%endif%}
+    {%if role.prospects%}
+    <h3 class="heado">Prospects:</h3>
+    <div class="bl_content">
+        {% if role.html_enabled %}
+          {% autoescape off %}
+          {{role.prospects}} 
+          {% endautoescape %}
+          {% else %}
+          <p>{{role.prospects}}</p>
+        {% endif %}
+    </div>
+    {%endif%}
+    <hr>
+</div>
+
+</div>
+{% endblock content %}
+
+</body>
+
+
+

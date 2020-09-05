@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>SPANAV</title>
+{% endblock headtitle %}
+
+
+{% block extracss %}
+<!-- <link href="{% static '/css/style.css' %}" rel="stylesheet"> -->
+{% endblock extracss %}
+
+
+{% block content %}
+<style>
+    .border{
+        border-left: 1px solid #cfcbcb; display :inline; margin-left: 10px; margin-right: 10px ;
+    }
+   .row .img{
+    -webkit-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+   }
+
+   #cse{
+    cursor: pointer;
+   }
+
+</style>
+<div class = "container-fluid" style = "margin : 20px; margin-top : 80px">
+    <h1 style="font-family:'Roboto', sans-serif;font-size: 60px; text-align: center; color: black;">Engineerin<span style="color: #FF8C00;">g</span></h1>
+    <h3 style="font-family:'Roboto', sans-serif; font-size: 40px;text-align: left; color: black; margin-left :16px">CS<span style="color: #FF8C00;">E</span></h3>
+    <span><h5 style="font-family:'Roboto', sans-serif;color: gray; margin-left :16px">(Computer Science Engineering)</h5></span>
+    <div class="card" style = "margin : 20px">  
+        <div class="card-body">
+            <div class="row no-gutters">
+                <div class="col-12 col-sm-6 col-md-8">
+                    <div class = "row">
+                    <img class="card-img-top img-fluid" id = "topImage-Cse" src="/media/pics/Frontend.png" style = "height : 200px; width : 300px; margin-left : 16px; margin-right : 16px ;"alt="Card image cap">
+                    <div class="col-xl-3">
+                        <h5 class="card-title" id = "titleCard-Cse">FrontEnd</h5>
+                        <a id ="button" class="btn btn-success btn-group-sm" href = "/streams/cse">LearnMore</a>
+                    </div>
+                    </div>
+                        <div style="margin : 10px"></div>
+                       <p class="card-text" id = "sub-Cse">Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.</p>
+                </div>
+                <span class = "border" ></span>
+                <div class="col-5 col-md-3">
+                    <div class="list-group" > 
+                        <a href="/media/pics/Frontend.png" id = "cse" src = "/streams/cse"dir = "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing."class="list-group-item list-group-item-action active">
+                          FrontEnd
+                        </a>
+                        <a href="/media/pics/Backend.png" id = "cse" src = "/stream/cse" dir = "The backend (or “server-side”) is the portion of the website you don't see. It's responsible for storing and organizing data, and ensuring everything on the client-side actually works. The backend communicates with the front-end, sending and receiving information to be displayed as a web page." class="list-group-item list-group-item-action">Backend</a>
+                        <a href="/media/pics/DataAnalysis.png" id = "cse" src = "/stream/cse" dir = "In short, data analysis involves sorting through massive amounts of unstructured information and deriving key insights from it. ... Although they belong to the same family, data science is typically more advanced (a lot more programming, creating new algorithms, building predictive models, etc.)." class="list-group-item list-group-item-action">DataAnalyst</a>
+                        <a href = "/media/pics/DataScience.png " dir = "Computer Science sub-areas include computations, probabilistic theories, reasoning, discrete structures and database design. Data Science include Simulation, modeling, analyicts, machine learning, computational mathematics etc., Computer science is the main branch whereas Data Science is a branch of Computer Science." id = "cse" src = "/stream/cse" class="list-group-item list-group-item-action ">Data Science</a>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Roboto', sans-serif; font-size: 40px;text-align: left; color: black; margin-left :16px">EC<span style="color: #FF8C00;">E</span></h3>
+      <span><h5 style="font-family:'Roboto', sans-serif;color: gray; margin-left :16px">(Electronics & Communication Engineering)</h5></span>
+      <div class="card"  style = "margin : 20px; ">  
+          <div class="card-body">
+              <div class="row no-gutters">
+                  <div class="col-12 col-sm-6 col-md-8">
+                      <div class = "row">
+                      <img class="card-img-top" id = "topImage-Ece" src="/media/pics/cprogramming.jpg" style = "height : 200px; width : 250px; margin-left : 16px; margin-right : 16px ;"alt="Card image cap">
+                      <div class="col-xl-3">
+                        <h5 class="card-title" id = "titleCard-Ece">FrontEnd</h5>
+                        <a id ="button" class="btn btn-success btn-group-sm" href = "">LearnMore</a>
+                    </div>
+                      </div>
+                      <div style="margin : 10px"></div>
+                         <p class="card-text" id = "sub-Ece">This is FrontEnd</p>
+                  </div>
+                  <span style="border-left: 1px solid #cfcbcb; display :inline; margin-left: 10px; margin-right: 10px ;
+                  "></span>
+                  <div class="col-5 col-md-3" >
+                      <div class="list-group">
+                          <a href="/media/pics/cprogramming.jpg" dir = "This is FrontEnd"class="list-group-item list-group-item-action active" id = "ece">
+                            VLSI
+                          </a>
+                          <a href="/media/pics/Java.jpg" dir = "This is Backend" class="list-group-item list-group-item-action"  id = "ece">Embedded Systems</a>
+                          <a href="/media/pics/cprogramming_mcCAqUh.jpg" dir = "This is DataAnalyst" class="list-group-item list-group-item-action" id = "ece">Image Processing</a>
+                          <a href="#" dir = "This is DataScience" class="list-group-item list-group-item-action " id = "ece">Signal Processing</a>
+                          <a href="#" dir = "This is DataScience" class="list-group-item list-group-item-action " id = "ece">Hardware Circuit Designer</a>
+                        </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <h3 style="font-family:'Roboto', sans-serif; font-size: 40px;text-align: left; color: black; margin-left :16px">MEC<span style="color: #FF8C00;">H</span></h3>
+        <span><h5 style="font-family:'Roboto', sans-serif;color: gray; margin-left :16px">(Computer Science Engineering)</h5></span>
+        <div class="card" style = "margin : 20px">  
+            <div class="card-body">
+                <div class="row no-gutters">
+                    <div class="col-12 col-sm-6 col-md-8">
+                        <div class = "row">
+                        <img class="card-img-top" id = "topImage-Mec" src="/media/pics/cprogramming.jpg" style = "height : 200px; width : 250px; margin-left : 16px; margin-right : 16px ;"alt="Card image cap">
+                        <div class="col-xl-3">
+                            <h5 class="card-title" id = "titleCard-Mec">FrontEnd</h5>
+                            <a id ="button" class="btn btn-success btn-group-sm" href = "">LearnMore</a>
+                        </div>
+                        </div>
+                        <div style="margin : 10px"></div>
+                           <p class="card-text" id = "sub-Mec">This is FrontEnd</p>
+                    </div>
+                    <span style="border-left: 1px solid #cfcbcb; display :inline; margin-left: 10px; margin-right: 10px ;
+                    "></span>
+                    <div class="col-5 col-md-3">
+                        <div class="list-group">
+                            <a href="/media/pics/cprogramming.jpg" dir = "This is FrontEnd"class="list-group-item list-group-item-action active" id = "mec">
+                              FrontEnd
+                            </a>
+                            <a href="/media/pics/Java.jpg" dir = "This is Backend" class="list-group-item list-group-item-action" id = "mec">Backend</a>
+                            <a href="/media/pics/cprogramming_mcCAqUh.jpg" dir = "This is DataAnalyst" class="list-group-item list-group-item-action" id = "mec">DataAnalyst</a>
+                            <a href="#" dir = "This is DataScience" class="list-group-item list-group-item-action " id = "mec">Data Science</a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <h3 style="font-family:'Roboto', sans-serif; font-size: 40px;text-align: left; color: black; margin-left :16px">EE<span style="color: #FF8C00;">E</span></h3>
+          <span><h5 style="font-family:'Roboto', sans-serif;color: gray; margin-left :16px">(Computer Science Engineering)</h5></span>
+          <div class="card" style = "margin : 20px">  
+              <div class="card-body">
+                  <div class="row no-gutters">
+                      <div class="col-12 col-sm-6 col-md-8">
+                          <div class = "row">
+                          <img class="card-img-top" id = "topImage-Eee" src="/media/pics/cprogramming.jpg" style = "height : 200px; width : 250px; margin-left : 16px; margin-right : 16px ;"alt="Card image cap">
+                          <div class="col-xl-3">
+                            <h5 class="card-title" id = "titleCard-Eee">FrontEnd</h5>
+                            <a id ="button" class="btn btn-success btn-group-sm" href = "">LearnMore</a>
+                        </div>
+                          </div>
+                          <div style="margin : 10px"></div>
+                             <p class="card-text" id = "sub-Eee">This is FrontEnd</p>
+                      </div>
+                      <span style="border-left: 1px solid #cfcbcb; display :inline; margin-left: 10px; margin-right: 10px ;
+                      "></span>
+                      <div class="col-5 col-md-3">
+                          <div class="list-group">
+                              <a href="/media/pics/cprogramming.jpg" dir = "This is FrontEnd"class="list-group-item list-group-item-action active"id = "eee">
+                                FrontEnd
+                              </a>
+                              <a href="/media/pics/Java.jpg" dir = "This is Backend" class="list-group-item list-group-item-action"id = "eee">Backend</a>
+                              <a href="/media/pics/cprogramming_mcCAqUh.jpg" dir = "This is DataAnalyst" class="list-group-item list-group-item-action"id = "eee">DataAnalyst</a>
+                              <a href="#" dir = "This is DataScience" class="list-group-item list-group-item-action "id = "eee">Data Science</a>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+              <h3 style="font-family:'Roboto', sans-serif; font-size: 40px;text-align: left; color: black; margin-left :16px">CH<span style="color: #FF8C00;">E</span></h3>
+        <span><h5 style="font-family:'Roboto', sans-serif;color: gray; margin-left :16px">(Computer Science Engineering)</h5></span>
+        <div class="card" style = "margin : 20px">  
+        <div class="card-body">
+            <div class="row no-gutters">
+                <div class="col-12 col-sm-6 col-md-8">
+                    <div class = "row">
+                    <img class="card-img-top" id = "topImage-Che" src="/media/pics/cprogramming.jpg" style = "height : 200px; width : 250px; margin-left : 16px; margin-right : 16px ;"alt="Card image cap">
+                    <div class="col-xl-3">
+                        <h5 class="card-title" id = "titleCard-Che">FrontEnd</h5>
+                        <a id ="button" class="btn btn-success btn-group-sm" href = "">LearnMore</a>
+                    </div>
+                    </div>
+                    <div style="margin : 10px"></div>
+                       <p class="card-text" id = "sub-Che">This is FrontEnd</p>
+                </div>
+                <span style="border-left: 1px solid #cfcbcb; display :inline; margin-left: 10px; margin-right: 10px ;
+                "></span>
+                <div class="col-5 col-md-3">
+                    <div class="list-group">
+                        <a href="/media/pics/cprogramming.jpg" dir = "This is FrontEnd"class="list-group-item list-group-item-action active"id = "che">
+                          FrontEnd
+                        </a>
+                        <a href="/media/pics/Java.jpg" dir = "This is Backend" class="list-group-item list-group-item-action"id = "che">Backend</a>
+                        <a href="/media/pics/cprogramming_mcCAqUh.jpg" dir = "This is DataAnalyst" class="list-group-item list-group-item-action"id = "che">DataAnalyst</a>
+                        <a href="#" dir = "This is DataScience" class="list-group-item list-group-item-action "id = "che">Data Science</a>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+</div>
+<script>
+    $(".list-group a").on("click", function() {
+      $(".list-group a").removeClass("active");
+      $(this).addClass("active");
+    });
+
+
+$(function(){
+    $('.list-group a').on("click",function(){
+        var id = $(this).attr('id')
+        console.log(id)
+        switch(id){
+            case 'cse':
+                var img = $(this).attr('href')
+                var title = $(this).text()
+                var subtitle = $(this).attr('dir')
+                var link = $(this).attr('src')
+                $('#button').html('<a id="button" class="btn btn-success" href = "'+link+'">LearnMore</a>')
+                $('#titleCard-Cse').html('<h5 class="card-title" id = "titleCard-Cse">'+title+'</h5>');
+                $('#sub-Cse').html('<p class="card-text" id = "sub-Cse">'+subtitle+'</p>')
+                $("#topImage-Cse").attr('src',img);
+                return false;
+             break;
+             case 'ece':
+                var img = $(this).attr('href')
+                var title = $(this).text()
+                var subtitle = $(this).attr('dir')
+                var link = $(this).attr('src')
+                $('#button').html('<a id="button" class="btn btn-success" href = "'+link+'">LearnMore</a>')
+                $('#titleCard-Ece').html('<h5 class="card-title" id = "titleCard-Cse">'+title+'</h5>');
+                $('#sub-Ece').html('<p class="card-text" id = "sub-Cse">'+subtitle+'</p>')
+                $("#topImage-Ece").attr('src',img);
+                return false;
+             break;
+             case 'mec':
+                var img = $(this).attr('href')
+                var title = $(this).text()
+                var subtitle = $(this).attr('dir')
+                var link = $(this).attr('src')
+                $('#button').html('<a id="button" class="btn btn-success" href = "'+link+'">LearnMore</a>')
+                $('#titleCard-Mec').html('<h5 class="card-title" id = "titleCard-Cse">'+title+'</h5>');
+                $('#sub-Mec').html('<p class="card-text" id = "sub-Cse">'+subtitle+'</p>')
+                $("#topImage-Mec").attr('src',img);
+                return false;
+             break;
+             case 'eee':
+                var img = $(this).attr('href')
+                var title = $(this).text()
+                var subtitle = $(this).attr('dir')
+                var link = $(this).attr('src')
+                $('#button').html('<a id="button" class="btn btn-success" href = "'+link+'">LearnMore</a>')
+                $('#titleCard-Eee').html('<h5 class="card-title" id = "titleCard-Cse">'+title+'</h5>');
+                $('#sub-Eee').html('<p class="card-text" id = "sub-Cse">'+subtitle+'</p>')
+                $("#topImage-Eee").attr('src',img);
+                return false;
+             break;
+             case 'che':
+                var img = $(this).attr('href')
+                var title = $(this).text()
+                var subtitle = $(this).attr('dir')
+                var link = $(this).attr('src')
+                $('#button').html('<a id="button" class="btn btn-success" href = "'+link+'">LearnMore</a>')
+                $('#titleCard-Che').html('<h5 class="card-title" id = "titleCard-Cse">'+title+'</h5>');
+                $('#sub-Che').html('<p class="card-text" id = "sub-Cse">'+subtitle+'</p>')
+                $("#topImage-Che").attr('src',img);
+                return false;
+             break;
+        }
+    })
+});
+
+   
+  //  $(function(){
+    //    $(".list-group a").on("click",function(){
+      //      var image = $(this).attr('href')
+        //    var title = $(this).text()
+          //  var subtitle = $(this).attr('dir')
+            //$('#titleCardEce').html('<h5 class="card-title" id = "titleCard">'+title+'</h5>');
+            //$('#subEce').html('<p class="card-text" id = "sub">'+subtitle+'</p>')
+            //$("#topImageEce").attr('src',image);
+           // return false;
+            //})
+   // });
+
+</script>
+
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>SPANAV</title>
+{% endblock headtitle %}
+
+
+{% block extracss %}
+<!-- <link href="{% static '/css/style.css' %}" rel="stylesheet"> -->
+{% endblock extracss %}
+
+
+{% block content %}
+<div class = "container-fluid"style="margin : 20px; margin-top : 80px;">
+    {% if contact_ver %}
+    <h3>Your Response Haven't been Recorded please email us at support@spanavedtech.com for Queries</h3>
+    {% for cont in contact %}
+    <div class="border border-dark">
+        <h4>Your Contact_id: {{cont.contact_id}}</h4>
+        <h5>Your message was: {{cont.message_given}}</h5>
+        <h6>Your email: {{cont.email}}</h6>
+        <!-- {% if cont.resolved %}
+        <h6>Acknowledged: <span style="color: green;">YES</span></h6>
+        {% else %}
+            <h6>Acknowledged: <span style="color: red;">NO</span> </h6>
+        {% endif %} -->
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2>Your Reponse have Been Recorded Your {{contact.contact_id}} </h2>
+    <h3>Also We have Send You an Email our Team will contact you </h3>
+    <h4>Thank You</h4>
+    {% endif %}
+</div>
+{% endblock content %}

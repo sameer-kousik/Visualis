@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl%}
+
+{% block headtitle %}
+    <title>{{courses.title}}</title>
+{% endblock headtitle %}
+
+
+{% block extracss %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link href="/css/style.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.4.456/build/pdf.min.js"></script>
+{% endblock extracss %}
+
+
+
+{% block content %}
+
+    <div id="cc-0">
+    <section id="top-course">
+      <div id="toopp" class="container-fluid">
+        <div id="cc1" class="container-fluid">
+          <img id="co-img" src="{{courses.course_img.url}}" alt="Image" >
+          <div id="co-h" class="container-fluid">
+          <h3 id="co-hh">{{courses.title}}</h3>
+          <p>{{courses.overview}}</p>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-file-text"></i>{{courses.no_of_weeks}} WEEKS</li>
+            <li><i class="fa-li fa fa-sliders"></i>{{courses.course_level}}</li>
+            <li><i class="fa-li fa fa-certificate"></i>Certification</li>
+          </ul> 
+          <p>Created By : {{courses.mentor_name}}</p>
+          {% if user.is_authenticated and not checkout_enrolled_course%}
+          <form action = '/purchased' method = "POST">{% csrf_token %}
+            <input type = "hidden" value = {{user.id}} name = "id"/>
+            <input type = "hidden" value = {{courses.course_id}} name = "course_id"/>
+          <input type = "submit"  id="purchase" class="btn btn-rounded btn-amber" value = "₹ {{courses.price}}/-" />
+          </form>
+          {% elif user.is_authenticated and checkout_enrolled_course %}
+                <form action = '/lms' method = "POST">
+                  {% csrf_token %}
+                    <input type = "hidden"  value = "{{courses.course_id}}" name = "course_id"/>
+                    <input type = "hidden" value = {{registration_id}} name = "registration_id"/>
+                    <input type = "submit"  id="purchase" class="btn btn-rounded btn-amber" value = "Go To LMS" />
+                </form>
+          {% else %}
+              <a role="button" id="purchase" href="/login?course_id={{courses.course_id}}" class="btn btn-rounded btn-amber"></i>Login to Enroll </a>
+          {% endif %}
+        </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div style="clear: both;"></div>
+  <section id="tabbed-pane">
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-lg-12 col-md-12">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-skills" role="tab" aria-controls="nav-profile" aria-selected="false">Skills</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-prerequisites" role="tab" aria-controls="nav-contact" aria-selected="false">Course Prerequisites</a>
+          <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-content" role="tab" aria-controls="nav-about" aria-selected="false">Content</a>
+          <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-mentor" role="tab" aria-controls="nav-about" aria-selected="false">Mentor</a>
+        </div>
+      </nav>
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-Description-tab">
+          <!-- <canvas id = "desc_canvas"></canvas>
+          <script>
+            pdfjsLib.getDocument('{{courses.pdf.url}}').then(doc => {
+                var pdfCanvas = document.getElementById('desc_canvas');
+                var context = pdfCanvas.getContext("2d");
+
+                var viewport = page.getViewPort(1);
+                pdfCanvas.width = viewport.width;
+                pdfCanvas.height = viewport.height;
+                
+                page.render({
+                  canvasContext :context,
+                  viewport : viewport
+                })
+            })
+          </script> -->
+          <!-- style="width: 100%;height: 800px;border: none;" -->
+          <canvas id="the-canvas" pdf-url="{{courses.pdf.url}}" style="border:1px solid black;"/>
+          
+        </div>
+        <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+          {% if courses.html_enabled %}
+          {% autoescape off %}
+          {{courses.skills}} 
+          {% endautoescape %}
+          {% else %}
+          <p>{{courses.skills}} </p>
+          {% endif %}
+        </div>
+        <div class="tab-pane fade" id="nav-prerequisites" role="tabpanel" aria-labelledby="nav-prerequisites-tab">
+          {% if courses.html_enabled %}
+          {% autoescape off %}
+          {{courses.course_prequesites_details}}
+          {% endautoescape %}
+          {% else %}
+          <p>{{courses.course_prequesites_details}}</p>
+          {% endif %}
+         
+        </div>
+        <div class="tab-pane fade" id="nav-content" role="tabpanel" aria-labelledby="nav-content-tab">
+          {% if courses.html_enabled %}
+          {% autoescape off %}
+          {{courses.content_details}}
+          {% endautoescape %}
+          {% else %}
+          <p>{{courses.content_details}}</p>
+          {% endif %}
+         
+         
+        </div>
+        <div class="tab-pane fade" id="nav-mentor" role="tabpanel" aria-labelledby="nav-mentor-tab">
+          <div class = "row" style="text-align: center;">
+          <img style="margin-left: 40%;"  src="{{courses.mentor_name.mentor_image.url}}" class="rounded-circle"  width="20%" height="auto" /> 
+          <div> 
+          <h3 style = "margin: 40px;">{{courses.mentor_name}}</h3>
+           <p style="padding: 10px;">{{courses.mentor_name.description}}</p>
+          </div>  
+           </div>
+           <div style=""></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+ <script>
+   var canvas = document.getElementById('the-canvas');
+   var file = canvas.getAttribute('pdf-url');
+   PDFJS.getDocument(file).then(function(pdf) {
+  pdf.getPage(1).then(function(page) {
+    var scale = 1.5;
+    var viewport = page.getViewport(scale);
+    var context = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    var renderContext = {
+      canvasContext: context,
+      viewport: viewport
+    };
+    page.render(renderContext);
+  });
+});
+ </script>
+
+{% endblock content %}
