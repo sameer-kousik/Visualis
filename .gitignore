@@ -1,0 +1,10 @@
+Visualis/
+venv/
+homepage/__pycache__/
+Visualis/__pycache__/
+Visualis/migrations/__pycache__/
+homepage/migrations/__pycache__/
+homepage/__pycache__/
+dev_env.sh
+
+
