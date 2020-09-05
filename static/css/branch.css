@@ -1,0 +1,54 @@
+body{
+    margin-top: 80px;
+}
+
+.container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container h2{
+    margin-top: 55px;
+}
+
+.top-head{
+    background-color: #fcca8d;
+    height: 300px;
+}
+
+.top-head {
+    background: #ffbd17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.top-head h2{
+    font-size: 590%;
+}
+
+#content {
+    background: #06c;
+}
+  
+
+.card{
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #fcca8d;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    margin-bottom: 50px!important;
+    margin: 10px;
+    
+}
+.card-title{
+    font-family: 'Playfair Display', serif;
+}
+
+@media(max-width:760px){
+    
+.top-head h2{
+    font-size: 400%;
+}
+}

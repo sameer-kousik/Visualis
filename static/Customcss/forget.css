@@ -1,0 +1,255 @@
+section.forget_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 840px) {
+  section.forget_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  section.forget_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+section.forget_section div.container {
+  margin-top: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+section.forget_section div.container div.forget_img {
+  margin: 0 40px;
+}
+
+section.forget_section div.container div.forget_img img {
+  width: 250px;
+  height: auto;
+  display: none;
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container div.forget_img img {
+    display: block;
+    width: 500px;
+  }
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container div.forget_img {
+    margin: 40px;
+  }
+}
+
+section.forget_section div.container section.forget_form {
+  padding: 0 40px;
+}
+
+section.forget_section div.container section.forget_form div.forget_txt {
+  text-align: center;
+}
+
+section.forget_section div.container section.forget_form div.forget_txt div.form_txt {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container section.forget_form div.forget_txt div.form_txt {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  section.forget_section div.container section.forget_form div.forget_txt div.form_txt {
+    font-size: 36px;
+  }
+}
+
+section.forget_section div.container section.forget_form div.forget_txt div.form_subtxt {
+  font-size: 14px;
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container section.forget_form div.forget_txt div.form_subtxt {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  section.forget_section div.container section.forget_form div.forget_txt div.form_subtxt {
+    font-size: 20px;
+  }
+}
+
+section.forget_section div.container section.forget_form div.form {
+  padding: 20px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 500px;
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container section.forget_form div.form form.form_container {
+    width: 350px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  section.forget_section div.container section.forget_form div.form form.form_container {
+    width: 500px;
+  }
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container div.email {
+  background-color: rgba(223, 228, 234, 0.5);
+  padding: 10px;
+  width: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 10px;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container div.email i {
+  padding: 5px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container div.email input {
+  background: transparent;
+  border: none;
+  width: 80%;
+  padding: 10px;
+  border-bottom: 2px solid #98eaba;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+@media (min-width: 840px) {
+  section.forget_section div.container section.forget_form div.form form.form_container div.email input {
+    width: 90%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  section.forget_section div.container section.forget_form div.form form.form_container div.email input {
+    width: 90%;
+  }
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container div.email:hover {
+  background-color: rgba(223, 228, 234, 0.253);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container div.email:hover i {
+  color: #2ed573;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container div.email:hover input {
+  border-bottom: 2px solid #2ed573;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container button.forget_btn {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid #2ed573;
+  background-color: #2ed573;
+  border-radius: 5px;
+  padding: 10px 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container button.forget_btn:hover {
+  background-color: transparent;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container a.back_login {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #3c40c6;
+}
+
+section.forget_section div.container section.forget_form div.form form.form_container a.back_login:hover {
+  color: #3c40c6;
+  font-weight: 600;
+}
+/*# sourceMappingURL=forget.css.map */
