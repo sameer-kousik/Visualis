@@ -153,7 +153,7 @@
     <h3 class="title" >{{course.title}}</h3>
     <a href="#" data-url="{{course.pdf.url}}">Course Overview</a>
     {%for week in weeks%}
-      <a href="#" data-url="{{week.link}}">Week {{week.week_no}}</a>
+      <a href="#" data-url="{{week.link}}">Day {{week.week_no}}</a>
     {%endfor%}
     <hr>
     <hr>
@@ -176,7 +176,7 @@
   </div>
 
   <div class="content" > 
-    <div id="material" class="weekly container" style=" float : right; margin-top:10%;">
+    <div id="material" class="weekly container-fluid" style=" float : right; margin-top:10%;">
           <p id="disp"></p>
     </div>
   </div>
@@ -204,6 +204,7 @@ for (i = 0; i < dropdown.length; i++) {
 });
 
     $('div a').click(function(){
+      if(!$(this).hasClass("dropdown-btn")){
       $(this).addClass("active").siblings().removeClass("active");
       var source = $(this).attr('data-url');
       /*
@@ -215,7 +216,7 @@ for (i = 0; i < dropdown.length; i++) {
       $('#disp').empty();
       $('#disp').append(source);   
       //$("#disp").attr('src',source);
-    });
+    }});
 
   </script>  
 </body>

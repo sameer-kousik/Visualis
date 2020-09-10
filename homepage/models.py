@@ -70,7 +70,26 @@ class Weeks(models.Model):
         week_id = models.AutoField(primary_key=True)
         course_id = models.ForeignKey(Courses,on_delete=models.CASCADE)
         week_no = models.IntegerField()
-        link = models.TextField()
+        link = models.TextField(default="""<div id="extdiv">
+<div  class="embed-responsive embed-responsive-16by9 ">
+<iframe style="max-height: 750px;  width=40%; "  class="embed-responsive-item"  src="https://www.youtube.com/embed/Lcxm0jCgQs0" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h3 style="margin-top:20px;">Conversion of NFA to Equivalent DFA</h3>
+</div>
+<style>
+#extdiv{
+margin-left:20%;
+}
+@media screen and (max-width: 700px) {
+  #extdiv {
+padding: 0;
+margin: 0;
+    width: 100%;
+    height: auto;
+
+  }
+}
+</style> """)
         test_available = models.BooleanField(default=False)
         def __str__(self):
                 mentor_name = str(self.course_id.mentor_name)

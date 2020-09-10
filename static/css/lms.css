@@ -166,7 +166,7 @@ nav ul li a span.rotate{
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .sidebar {
     width: 100%;
     height: auto;
@@ -177,7 +177,7 @@ nav ul li a span.rotate{
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .sidebar a {
     text-align: center;
     float: none;
@@ -186,14 +186,15 @@ nav ul li a span.rotate{
 
 
 #material{
+  margin-left:20%;
   margin-top: 73px;
   padding-left: 15%;
   padding-right: 15%;
-  
+   
 
 }
 
-@media(max-width=640px){
+@media(max-width=780px){
   #material{
     padding-right: 0px;
     padding-left: 0px;

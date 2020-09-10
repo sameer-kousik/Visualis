@@ -588,7 +588,7 @@ def edit_tab_profile(request):
         current_user = request.user
         question_number = int(question_number)
         if(question_number == 1):
-            question_val = "What Programming Skill?"
+            question_val = "Which Programming Languages are you good at?"
             ver = profileEditQuestions.objects.filter(user = current_user).exists()
             if(ver):
                 answer = profileEditQuestions.objects.get(user = current_user)
@@ -599,7 +599,7 @@ def edit_tab_profile(request):
                        }
             return render(request,'edit-tab-profile.html',{'question_val' : question_val,'question_number' : question_number ,'answer' : answer})
         elif(question_number == 2):
-            question_val = "What are your aim?"
+            question_val = "What is your aim?"
             ver = profileEditQuestions.objects.filter(user = current_user).exists()
             if(ver):
                 answer = profileEditQuestions.objects.get(user = current_user)
@@ -610,7 +610,7 @@ def edit_tab_profile(request):
                        }
             return render(request,'edit-tab-profile.html',{'question_val' : question_val,'question_number' : question_number  ,'answer' : answer})
         elif(question_number == 3):
-            question_val = "What are cerifications Have you Done?"
+            question_val = "Mention your Certifications and Badges?"
             ver = profileEditQuestions.objects.filter(user = current_user).exists()
             if(ver):
                 answer = profileEditQuestions.objects.get(user = current_user)
