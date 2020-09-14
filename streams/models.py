@@ -33,11 +33,16 @@ class JobRole(models.Model):
         title = models.CharField(max_length=30,blank=True)
         html_enabled = models.BooleanField(default=False)
         description = models.TextField(blank=True)
-        responsibilities=models.TextField()
-        salary=models.TextField()
-        working_hrs=models.TextField(blank=True)
+        syllabus= models.ImageField(blank=True,null=True,upload_to='pics')
+        notes=models.TextField(default="""
+        All related notes and materials are available at:
+
+<br>
+<a width="80%"   target="_blank"  href="paste drive link here" >Click Here</a>
+        """)
+        """working_hrs=models.TextField(blank=True)
         qualifications=models.TextField(blank=True)
         skills=models.TextField(blank=True)
         experience=models.TextField(blank=True)
         employer=models.TextField(blank=True)
-        prospects=models.TextField(blank=True)
+        prospects=models.TextField(blank=True)"""

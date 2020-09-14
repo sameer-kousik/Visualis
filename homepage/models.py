@@ -74,12 +74,14 @@ class Weeks(models.Model):
 <div  class="embed-responsive embed-responsive-16by9 ">
 <iframe style="max-height: 750px;  width=40%; "  class="embed-responsive-item"  src="https://www.youtube.com/embed/Lcxm0jCgQs0" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h3 style="margin-top:20px;">Conversion of NFA to Equivalent DFA</h3>
+<h2 style="margin-top:20px;">Conversion of NFA to Equivalent DFA</h2>
+<p>This video instructs students on how to convert NFA into it's equivalent DFA</p>
 </div>
 <style>
 #extdiv{
-margin-left:20%;
+margin-left:30%;
 }
+
 @media screen and (max-width: 700px) {
   #extdiv {
 padding: 0;

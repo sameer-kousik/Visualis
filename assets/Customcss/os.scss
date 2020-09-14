@@ -1,0 +1,286 @@
+
+$fonts: (
+    "10": 10px,
+    "14": 14px,
+    "16": 16px,
+    "20": 20px,
+    "24": 24px,
+    "30": 30px,
+    "36": 36px,
+    "50": 50px,
+    "70": 70px
+);
+$colors: (
+    "link_black": #000,
+    "link_white": #FFF,
+    "card_border": rgba(207, 207, 207, 0.555),
+    "link_red": #ff3838,
+    "link_red_light": #ff383818,
+    "btn_green": rgb(46, 213, 115),
+    "btn_green_30": lighten(#2ed574, 30%),
+    "btn_green_20": lighten(#2ed574, 20%),
+    "btn_green_10": lighten(#2ed573, 10%),
+    "link_blue": #292194,
+    "link_blue_light": lighten(#292194,20%)
+);
+
+$desktop: 840px;
+$tablet: 640px;
+
+@function getColor($color_name) {
+    @return map-get($map: $colors, $key: $color-name)
+};
+@function getFont($size) {
+    @return map-get($map: $fonts, $key: $size);
+};
+
+@mixin desktop {
+    @media(min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media(min-width: #{$tablet}) and (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    section.heading {
+        margin: 90px 30px 20px 30px;
+
+        h1.title {
+            font-size: getFont("24");
+            @include desktop {
+                font-size: getFont("36");
+            }
+            @include tablet {
+                font-size: getFont("36");
+            }
+        }
+
+        div.description {
+            text-align: justify;
+            font-size: getFont("14");
+            @include desktop {
+                font-size: getFont("16");
+            }
+            @include tablet {
+                font-size: getFont("16");
+            }
+        }
+    }
+
+    section.os_block {
+        margin: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+
+        @include desktop {
+            margin: 10px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 95%;
+        }
+        @include tablet {
+            margin: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 95%;
+        }
+
+        section.block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            border: 1px solid getColor("card_border");
+            border-radius: 10px;
+            margin: 10px 0;
+
+            h1.title {
+                width: 100%;
+                text-align: center;
+                font-size: getFont("24");
+                background-color: getColor("btn_green_20");
+                border-radius: 10px 10px 0 0;
+                transition: .5s;
+            }
+
+            div.card_container {
+                overflow-y: scroll;
+                height: 550px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                div.card_block {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+        
+                    @include desktop {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                    }
+        
+                    @include tablet{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        max-width: 500px;
+                    }
+        
+                    div.card {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        margin: 10px 0;
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid getColor("card_border");
+                        border-radius: 5px;
+                        transition: .5s;
+                        // box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.247);
+        
+                        @include desktop {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 20px;
+                            text-align: center;
+                            max-width: 600px;
+                        }
+        
+                        @include tablet {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 20px 10px;
+                            text-align: center;
+                            max-width: 500px;
+                        }
+        
+                        video.vid {
+                            width: 100%;
+                            height: auto;
+                            margin-bottom: 10px;
+                        }
+        
+                        h4.vid_title {
+                            font-size: getFont("20");
+                        }
+        
+                        div.desc {
+                            text-align: justify;
+                            font-size: getFont("14");
+                        }
+        
+                        a.expand_item {
+                            text-decoration: none;
+                            color: getColor("link_black");
+                            // background-color: getColor("hover_bg");
+                            border: 2px solid getColor("btn_green");
+                            border-radius: 5px;
+                            padding: 5px;
+                            transition: .5s;
+                            margin: 20px;
+                            width: 100%;
+                        }
+        
+                        a.expand_item:hover {
+                            background-color: getColor("btn_green");
+                            font-weight: 600;
+                            transition: .5s background-color;
+                        }
+                    }
+        
+                    div.card:hover {
+                        box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.247);
+                        transition: .5s;
+                        @include desktop {
+                            transform: translateX(4px) translateY(2px);
+                        }
+                        @include tablet {
+                            transform: translateX(4px) translateY(2px);
+                        }
+                    }
+                }
+
+            }
+
+            a.viewAll {
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                color: getColor("link_black");
+                background-color: getColor("btn_green_20");
+                border: 2px solid transparent;
+                border-radius: 0 0 10px 10px;
+                padding: 5px;
+                transition: .5s;
+                margin-top: 10px;
+            }
+
+            a.viewAll:hover {
+                background-color: getColor("btn_green");
+                transition: .5s background-color;
+            }
+        }
+
+        section.block:hover {
+            h1.title {
+                background-color: getColor("btn_green");
+                transition: .5s;
+            }
+        }
+    }    
+
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: getColor("btn_green_10"); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: getColor("btn_green_20"); 
+}

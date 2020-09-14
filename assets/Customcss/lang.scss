@@ -1,0 +1,202 @@
+
+$fonts: (
+    "10": 10px,
+    "14": 14px,
+    "16": 16px,
+    "20": 20px,
+    "24": 24px,
+    "30": 30px,
+    "36": 36px,
+    "50": 50px,
+    "70": 70px
+);
+$colors: (
+    "link_black": #000,
+    "card_border": rgba(207, 207, 207, 0.555),
+    "nav_links_hover": #ff3838,
+    "nav_links_hover_light": #ff383818,
+    "border_hover": rgb(46, 213, 115),
+    "hover_bg": lighten(#2ed574, 40%),
+    "hover_bg_1": lighten(#2ed573, 25%),
+    "nav_link_dark": #218c74,
+    "footer_bg": #2f3640,
+    "footer_color": #fff,
+    "footer_color_light": rgba(255, 255, 255, 0.418),
+    "footer_nav_hover": lighten(#ff3838, 20%),
+    "link_blue": #3c40c6,
+);
+
+$desktop: 840px;
+$tablet: 640px;
+
+@function getColor($color_name) {
+    @return map-get($map: $colors, $key: $color-name)
+};
+@function getFont($size) {
+    @return map-get($map: $fonts, $key: $size);
+};
+
+@mixin desktop {
+    @media(min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media(min-width: #{$tablet}) and (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section.heading {
+        margin: 90px 30px 20px 30px;
+
+        h1.title {
+            font-size: getFont("30");
+            @include desktop {
+                font-size: getFont("36");
+            }
+            @include tablet {
+                font-size: getFont("36");
+            }
+        }
+
+        div.description {
+            text-align: justify;
+            font-size: getFont("14");
+            @include desktop {
+                font-size: getFont("16");
+            }
+            @include tablet {
+                font-size: getFont("16");
+            }
+        }
+    }
+
+    section.cards {
+        margin: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include desktop {
+            display: flex;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include tablet {
+            margin: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        div.card_block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include desktop {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            @include tablet{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 500px;
+            }
+
+            div.card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin: 10px 0;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid getColor("card_border");
+                border-radius: 5px;
+                transition: .5s;
+                // box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.247);
+
+                @include desktop {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 20px;
+                    text-align: center;
+                    max-width: 600px;
+                }
+
+                @include tablet {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 20px 10px;
+                    text-align: center;
+                    max-width: 500px;
+                }
+
+                video.vid {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                h4.vid_title {
+                    font-size: getFont("20");
+                }
+
+                div.desc {
+                    text-align: justify;
+                    font-size: getFont("14");
+                }
+
+                a.expand_item {
+                    text-decoration: none;
+                    color: getColor("link_black");
+                    // background-color: getColor("hover_bg");
+                    border: 2px solid getColor("border_hover");
+                    border-radius: 5px;
+                    padding: 5px;
+                    transition: .5s;
+                    margin: 20px;
+                    width: 100%;
+                }
+
+                a.expand_item:hover {
+                    background-color: getColor("border_hover");
+                    font-weight: 600;
+                    transition: .5s background-color;
+                }
+            }
+
+            div.card:hover {
+                box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.247);
+                transform: translateX(4px) translateY(2px);
+                transition: .5s;
+            }
+        }
+    }
+}

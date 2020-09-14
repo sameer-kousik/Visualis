@@ -1,0 +1,319 @@
+div.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 840px) {
+  div.login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  div.login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+div.login div.container {
+  margin-top: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 840px) {
+  div.login div.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+div.login div.container section.image {
+  margin: 0 40px;
+}
+
+div.login div.container section.image img {
+  width: 250px;
+  height: auto;
+  display: none;
+}
+
+@media (min-width: 840px) {
+  div.login div.container section.image img {
+    display: block;
+    width: 500px;
+  }
+}
+
+@media (min-width: 840px) {
+  div.login div.container section.image {
+    margin: 40px;
+  }
+}
+
+div.login div.container section.login_form {
+  width: 100%;
+  padding: 0 40px;
+}
+
+div.login div.container section.login_form div.login_txt {
+  text-align: center;
+}
+
+div.login div.container section.login_form div.login_txt div.txt_head {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (min-width: 840px) {
+  div.login div.container section.login_form div.login_txt div.txt_head {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  div.login div.container section.login_form div.login_txt div.txt_head {
+    font-size: 36px;
+  }
+}
+
+div.login div.container section.login_form div.login_txt div.txt_subhead {
+  font-size: 14px;
+}
+
+@media (min-width: 840px) {
+  div.login div.container section.login_form div.login_txt div.txt_subhead {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  div.login div.container section.login_form div.login_txt div.txt_subhead {
+    font-size: 20px;
+  }
+}
+
+div.login div.container section.login_form div.form {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.login div.container section.login_form div.form form.form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box, div.login div.container section.login_form div.form form.form_container div.password_box {
+  background-color: rgba(223, 228, 234, 0.5);
+  padding: 10px;
+  width: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box i, div.login div.container section.login_form div.form form.form_container div.password_box i {
+  padding: 5px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box input, div.login div.container section.login_form div.form form.form_container div.password_box input {
+  background: transparent;
+  border: none;
+  width: 80%;
+  padding: 10px;
+  border-bottom: 2px solid #98eaba;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+@media (min-width: 840px) {
+  div.login div.container section.login_form div.form form.form_container div.username_box input, div.login div.container section.login_form div.form form.form_container div.password_box input {
+    width: 90%;
+  }
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box {
+  border-radius: 10px 10px 0 0;
+}
+
+div.login div.container section.login_form div.form form.form_container div.password_box {
+  border-radius: 0 0 10px 10px;
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box:hover, div.login div.container section.login_form div.form form.form_container div.password_box:hover {
+  background-color: rgba(223, 228, 234, 0.253);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box:hover i, div.login div.container section.login_form div.form form.form_container div.password_box:hover i {
+  color: #2ed573;
+}
+
+div.login div.container section.login_form div.form form.form_container div.username_box:hover input, div.login div.container section.login_form div.form form.form_container div.password_box:hover input {
+  border-bottom: 2px solid #2ed573;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.login div.container section.login_form div.form form.form_container div.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+@media (min-width: 840px) {
+  div.login div.container section.login_form div.form form.form_container div.links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+  div.login div.container section.login_form div.form form.form_container div.links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+div.login div.container section.login_form div.form form.form_container div.links div.remember {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+}
+
+div.login div.container section.login_form div.form form.form_container div.links div.forget {
+  padding: 5px;
+}
+
+div.login div.container section.login_form div.form form.form_container div.links div.forget a {
+  text-decoration: none;
+  color: #3c40c6;
+}
+
+div.login div.container section.login_form div.form form.form_container div.links div.forget a:hover {
+  color: #3c40c6;
+  font-weight: 600;
+}
+
+div.login div.container section.login_form div.form form.form_container button.login_btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid #2ed573;
+  background-color: #2ed573;
+  border-radius: 5px;
+  padding: 10px 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.login div.container section.login_form div.form form.form_container button.login_btn:hover {
+  background-color: transparent;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.login div.container section.login_form div.form form.form_container div.signup {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+div.login div.container section.login_form div.form form.form_container div.signup a {
+  text-decoration: none;
+  color: #3c40c6;
+}
+
+div.login div.container section.login_form div.form form.form_container div.signup a:hover {
+  color: #3c40c6;
+  font-weight: 600;
+}
+/*# sourceMappingURL=login.css.map */

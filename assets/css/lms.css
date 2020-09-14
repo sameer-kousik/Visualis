@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/*
+.btn{
+  position: absolute;
+  top: 15px;
+  left: 45px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  background: #FF8C00;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+.sidebar{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  background: #808080;
+  transition: left 0.4s ease;
+}
+.sidebar.show{
+  left: 0px;
+}
+.sidebar .text{
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #808080;
+  letter-spacing: 1px;
+}
+nav ul{
+  background: #8080;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+nav ul li{
+  line-height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+nav ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+nav ul li a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+nav ul li.active a{
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+}
+nav ul li a:hover{
+  background: #1e1e1e;
+  text-decoration: none;
+  color: cyan;
+  border-left-color: cyan;
+}
+nav ul ul{
+  position: static;
+  display: none;
+}
+nav ul .feat-show.show{
+  display: block;
+}
+nav ul .serv-show.show1{
+  display: block;
+}
+nav ul ul li{
+  line-height: 42px;
+  border-top: none;
+}
+nav ul ul li a{
+  font-size: 17px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+nav ul li.active ul li a{
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+}
+nav ul ul li a:hover{
+  color: cyan!important;
+  background: #1e1e1e!important;
+}
+nav ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+nav ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+*/
+ /* The side navigation menu */
+ .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #555;
+  color: white;
+}
+.sidebar .title{
+  padding: 16px;
+}
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #777373;
+  color: white;
+}
+
+.btn{
+  width: 100%;
+}
+
+.btn:hover{
+  background-color: #777373;
+  color: white;
+}
+
+
+.dropdown-container {
+  display: none;
+  background-color: #f1f1f1;
+  padding-right: 2px;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 800px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 600px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}   
+
+
+#material{
+  margin-left:20%;
+  margin-top: 73px;
+  padding-left: 15%;
+  padding-right: 15%;
+   
+
+}
+
+@media(max-width=780px){
+  #material{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+.mat{
+  display: none;
+
+}
+.mat.active{
+  display: contents;
+}

@@ -1,0 +1,39 @@
+body{
+    margin-top: 80px;
+    
+}
+.container{
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.container h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 500%;
+}
+
+.bg-co{
+    background-color: #fcc088;
+}
+
+.container .heado{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 300%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container .bl_content{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 30px;
+    font-size: 150%;
+}
+
+#img_cont{
+    margin: 0 auto;
+}
+
+#img_cont img{
+    width: 100%;
+    height: auto;
+}
+
+

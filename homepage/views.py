@@ -316,7 +316,10 @@ def purchased(request):
             d_o_c = datetime.date(1972,10,11)
             enrolle = Enrollement(registration_id = registration_id,id = id_user,course_id = id_course,token_id = token_id,date_of_completion = d_o_c)
             enrolle.save()
-            return render(request,'purchase.html',{'enrolle' : enrolle})
+            enrolle = Enrollement.objects.get(registration_id = registration_id)
+            weeks = Weeks.objects.filter(course_id = enrolle.course_id.course_id)
+            return render(request,'lms.html',{'weeks' : weeks,'course':id_course, 'registration_id':registration_id})
+            
     else:
         return HttpResponse(status = 404)
  

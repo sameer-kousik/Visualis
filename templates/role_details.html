@@ -38,28 +38,28 @@
         {% endif %}
     </div>
     <hr>
-    {%if role.responsibilities%}
-    <h3 class="heado">Responsibilities:</h3>
+    {%if role.syllabus%}
+    <h3 class="heado">Syllabus:</h3>
         <div class="bl_content">
             {% if role.html_enabled %}
                 {% autoescape off %}
-                {{role.responsibilities}} 
+                <img src="{{role.syllabus.url}}" alt="Syllabus"> 
                 {% endautoescape %}
             {% else %}
-                <p>{{role.responsibilities}}</p>
+                <p>{{role.syllabus}}</p>
             {% endif %}
         </div>  
         <hr>
     {%endif%}
-    {%if role.salary%}
-    <h3 class="heado">Salary:</h3>
+    {%if role.notes%}
+    <h3 class="heado">Notes:</h3>
         <div class="bl_content">
             {% if role.html_enabled %}
                 {% autoescape off %}
-                {{role.salary}} 
+                {{role.notes}} 
                 {% endautoescape %}
             {% else %}
-                <p>{{role.salary}}</p>
+                <p>{{role.notes}}</p>
             {% endif %}
         </div>
         <hr>

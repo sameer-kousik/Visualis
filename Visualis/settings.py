@@ -27,7 +27,7 @@ DEBUG = int(os.environ.get("DEBUG", default=0))
 
 
 
-ALLOWED_HOSTS = ['127.0.0.1','0b142f226716.ngrok.io','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','932936d08983.ngrok.io','localhost']
 
 
 

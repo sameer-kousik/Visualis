@@ -30,7 +30,7 @@
 {% block content %}
 <body style="background-color: #f0f0f0!important;">
   
-<div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel" style = "margin-top: 80px;">
+<div id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel" style = "margin-top: 80px;">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     {% for var in carousels %}
@@ -39,17 +39,13 @@
   </ol>
   <div class="carousel-inner container-fluid">
     <div class="carousel-item active">
-      <img src="{% static '/img/psycho-slider_low.jpg' %}" class="d-block w-100 " alt="Packs">
+      <img src="{% static '/img/cmrec.jpg' %}" class="d-block w-100 " alt="Packs">
       <div class="carousel-caption d-none d-md-block">
-        <a class="btn btn-outline-light btn-lg text-center" href="/psychotest">Get Started </a>
       </div>
     </div>
     {% for car in carousels %}
-    <div class="carousel-item">
+    <div class="carousel-item ">
       <img src="{{car.carousel_image.url}}" class="d-block w-100" alt="Packs">
-      <div class="carousel-caption d-none d-md-block">
-        <a class="btn btn-outline-light btn-lg text-center" href="{{car.carousel_link}}">Get Started </a>
-      </div>
     </div>
     {% endfor %}
   </div>
@@ -84,7 +80,7 @@
         <div class="card">
           <div class="card-body">
             <div class="container-fluid">
-              <img src=  "{{course.course_img.url}}" class="card-img-top embed-responsive-item" alt="card">
+              <img style="margin-bottom: 10px;" src=  "{{course.course_img.url}}" class="card-img-top embed-responsive-item" alt="card">
               {% if course.offer %}
               <div class="top-right">
                 <img src="{% static '/img/offer.png' %}" height="50px" width = "30px"/>
@@ -146,7 +142,7 @@
           <form action="/blog" method = "POST">
             {% csrf_token %}
             <input type = "hidden"  value = "{{blog.id}}" name = "blog_id"/>
-            <input type="image" name="submit" src="{{blog.blog_img.url}}" border="0" alt="Submit" style="width: 100%;" />
+            <input type="image" name="submit" src="{{blog.blog_img.url}}" border="0" alt="Submit" style="width: 100%; height: 5%;" />
           </form>
         </div>
         {%endfor%}
