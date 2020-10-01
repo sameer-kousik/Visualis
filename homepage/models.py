@@ -1,9 +1,8 @@
 '''
-        Spanav 0.1v
-        Copyright (C) 2020 SpanavEdTech.private.limited
+        Visualis v1.0
         
         Created By : NayanRaj Adhikary  (github : https://github.com/nayanraj210401)
-                     Sameer Kasivajhula (github : https://github.com/sameerkousik)
+                     Sameer Kasivajhula (github : https://github.com/sameer-kousik)
 
 '''
 
@@ -11,7 +10,6 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 
-# Create your models here.
 
 class Mentor(models.Model):
     mentor_name = models.CharField(max_length = 30)
