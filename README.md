@@ -4,8 +4,6 @@ This is an Django applications with PostgreSQL
 =======
 #  Visualis
 
-Visualis is a Oragnisation provide brief document about the upcoming tecnologies
-
 # Structure of the Project
  V.1:
   - Homepage 
@@ -15,8 +13,7 @@ Visualis is a Oragnisation provide brief document about the upcoming tecnologies
   - Blogs
 
 ## HomePage
-In this page it need's to show just the lastest courses,Blog,what our users say 
-  - It has some overview about the Organisation
+This page is basically the first page users see when they open the site. 
 
 ## JobStreams
 In this page it talks about the upcoming trends in the market and this page will be done as Static page and weekly updated
@@ -31,6 +28,10 @@ In this basically we need to have a page to purhase the course and show the data
  - based on all the week result we need to issue certification
 > we need to make the LMS easy to use to our user 
 >And So on.
+
+## About US
+
+  - It has some overview about the Organisation
 
 ## Blog 
 This page need to have daily blog and this will be shown in another page
